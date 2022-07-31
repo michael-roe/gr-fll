@@ -20,6 +20,8 @@ private:
   float d_delta_f;
   float d_derivative;
   int d_count;
+  pmt::pmt_t d_delta_f_key;
+  unsigned long long d_offset;
 
 public:
   frequency_locked_loop_ff_impl(float rolloff, int samples);

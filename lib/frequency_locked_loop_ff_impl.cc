@@ -32,6 +32,8 @@ frequency_locked_loop_ff_impl::frequency_locked_loop_ff_impl(float rolloff,
   d_delta_f = 0.0;
   d_derivative = 0.0;
   d_count = 0.0;
+  d_delta_f_key = pmt::string_to_symbol("delta_f");
+  d_offset = 0;
 }
 
 /*
@@ -67,9 +69,11 @@ int frequency_locked_loop_ff_impl::work(int noutput_items,
       d_delta_f += d_derivative/((float) d_count);
       d_derivative = 0.0;
       d_count = 0;
+      add_item_tag(0, d_offset + i, d_delta_f_key, pmt::from_float(d_delta_f));
     }
   }
 
+  d_offset += noutput_items;
   // Tell runtime system how many output items we produced.
   return noutput_items;
 }
