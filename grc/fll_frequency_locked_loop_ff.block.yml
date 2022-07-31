@@ -1,5 +1,5 @@
 id: fll_frequency_locked_loop_ff
-label: frequency locked loop ff
+label: Frequency Locked Loop
 category: '[FLL]'
 templates:
   imports: import fll
