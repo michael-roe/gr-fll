@@ -1,0 +1,22 @@
+id: fll_frequency_locked_loop_ff
+label: frequency locked loop ff
+category: '[FLL]'
+templates:
+  imports: import fll
+  make: fll.frequency_locked_loop_ff(${rolloff}, ${samples})
+parameters:
+- id: rolloff
+  label: Rolloff
+  dtype: float
+- id: samples
+  label: Samples
+  dtype: int
+inputs:
+- label: in
+  domain: stream
+  dtype: float
+outputs:
+- label: out
+  domain: stream
+  dtype: float
+file_format: 1
