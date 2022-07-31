@@ -29,7 +29,7 @@ include(GrPybind)
 ########################################################################
 
 list(APPEND fll_python_files
-    python_bindings.cc)
+    frequency_locked_loop_ff_python.cc python_bindings.cc)
 
 GR_PYBIND_MAKE_OOT(fll
    ../../..

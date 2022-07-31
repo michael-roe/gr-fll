@@ -7,5 +7,5 @@
 #
 
 install(FILES
-    DESTINATION share/gnuradio/grc/blocks
+    fll_frequency_locked_loop_ff.block.yml DESTINATION share/gnuradio/grc/blocks
 )

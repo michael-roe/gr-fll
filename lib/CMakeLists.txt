@@ -12,6 +12,7 @@
 include(GrPlatform) #define LIB_SUFFIX
 
 list(APPEND fll_sources
+    frequency_locked_loop_ff_impl.cc
 )
 
 set(fll_sources "${fll_sources}" PARENT_SCOPE)

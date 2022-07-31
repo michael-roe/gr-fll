@@ -11,5 +11,5 @@
 ########################################################################
 install(FILES
     api.h
-    DESTINATION include/gnuradio/fll
+    frequency_locked_loop_ff.h DESTINATION include/gnuradio/fll
 )
