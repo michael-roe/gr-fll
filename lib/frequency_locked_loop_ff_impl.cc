@@ -49,12 +49,12 @@ int frequency_locked_loop_ff_impl::work(int noutput_items,
   // Do <+signal processing+>
   for (i=0; i<noutput_items; i++)
   {
-    if ((in[i] < -3.0 + d_delta_f) && (in[i] > -3.0 - d_rolloff + d_delta_f))
+    if ((in[i] < -3.0 + d_delta_f) && (in[i] > -3.0 + d_delta_f - d_rolloff))
     {
       d_derivative += sin((in[i] + 3.0 - d_delta_f)*M_PI/d_rolloff);
       d_count++;
     }
-    else if ((in[i] > 3 + d_delta_f) && (in[i] < 3 + d_rolloff + d_delta_f))
+    else if ((in[i] > 3 + d_delta_f) && (in[i] < 3 + d_delta_f + d_rolloff))
     {
       d_derivative += sin((in[i] - 3.0 - d_delta_f)*M_PI/d_rolloff);
       d_count++;
